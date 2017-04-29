@@ -1,0 +1,5 @@
+noinst_LTLIBRARIES = libsvm.la
+libsvm_la_CFLAGS = -O3
+libsvm_la_CPPFLAGS = -I$(top_srcdir)/include
+libsvm_la_SOURCES = libsvm.cpp
+

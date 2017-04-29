@@ -1,0 +1,1 @@
+liblr_a-amvpv.o: amvpv.c

@@ -1,0 +1,41 @@
+lib_LTLIBRARIES = libmiblab.la
+libmiblab_la_CFLAGS = -g -O2
+
+if HAS_OPENCV
+
+libmiblab_la_CPPFLAGS = -I$(top_srcdir)/include -I$(OPENCV)/include
+libmiblab_la_SOURCES = \
+	commandline.cpp \
+	md5str.cpp \
+	rand.cpp \
+	statistics.cpp \
+	strconv.cpp \
+	stringtokenizer.cpp \
+	uniqid.cpp \
+	feature_selection.cpp \
+	classifier.cpp \
+	classifier_shared.cpp \
+	bayes.cpp \
+	em.cpp \
+	knn.cpp	\
+	svm.cpp
+libmiblab_la_DEPENDENCIES = $(top_srcdir)/libsvm-2.8/libsvm.la
+libmiblab_la_LIBADD = $(top_srcdir)/libsvm-2.8/libsvm.la
+
+else
+
+libmiblab_la_CPPFLAGS = -I$(top_srcdir)/include
+libmiblab_la_SOURCES = \
+	commandline.cpp \
+	md5str.cpp \
+	rand.cpp \
+	statistics.cpp \
+	strconv.cpp \
+	stringtokenizer.cpp \
+	uniqid.cpp \
+	feature_selection.cpp \
+	svm.cpp
+libmiblab_la_DEPENDENCIES = $(top_srcdir)/libsvm-2.8/libsvm.la
+libmiblab_la_LIBADD = $(top_srcdir)/libsvm-2.8/libsvm.la
+
+endif
