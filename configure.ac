@@ -4,7 +4,7 @@
 AC_PREREQ(2.59)
 AC_INIT([MIBLab], 0.9, [jhphan@gmail.com])
 AM_INIT_AUTOMAKE([MIBLab], 0.9)
-AC_CONFIG_SRCDIR([src/checkerboard.cpp])
+AC_CONFIG_SRCDIR([src/extract_rows.cpp])
 AC_CONFIG_FILES([Makefile include/Makefile lib/Makefile src/Makefile])
 
 # Checks for programs.

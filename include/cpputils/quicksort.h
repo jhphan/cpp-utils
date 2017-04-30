@@ -3,8 +3,8 @@
 
 #include <vector>
 
-#include <miblab/error.h>
-#include <miblab/matrix.h>
+#include <cpputils/error.h>
+#include <cpputils/matrix.h>
 
 #define SORT_ASCENDING	0
 #define SORT_DESCENDING	1

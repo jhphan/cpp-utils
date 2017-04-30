@@ -1,4 +1,4 @@
-#include <miblab/stringtokenizer.h>
+#include <cpputils/stringtokenizer.h>
 
 StringTokenizer::StringTokenizer(char *str, char delim, bool greedy) {
 	m_delim = delim;

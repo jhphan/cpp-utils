@@ -1,8 +1,8 @@
 
 #include <iostream>
-#include <miblab/matrix.h>
-#include <miblab/commandline.h>
-#include <miblab/datafileheader.h>
+#include <cpputils/matrix.h>
+#include <cpputils/commandline.h>
+#include <cpputils/datafileheader.h>
 #include <map>
 
 using namespace std;

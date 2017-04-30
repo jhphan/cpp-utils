@@ -2,13 +2,12 @@
 #define __DATAFILE__H__
 
 #define MAX_BUF_LEN	1048576
-#define RMP_MAX_BUF_LEN	5242880
 
 #include <iostream>
 #include <fstream>
-#include <miblab/matrix.h>
-#include <miblab/stringtokenizer.h>
-#include <miblab/error.h>
+#include <cpputils/matrix.h>
+#include <cpputils/stringtokenizer.h>
+#include <cpputils/error.h>
 
 using namespace std;
 
@@ -52,7 +51,7 @@ int DataFile<T>::readFileLine(FILE* f, char* line) {
 	size = 0;
 
 	ch = fgetc(f);
-	while ((ch != '\n') && (ch != EOF) && (size<RMP_MAX_BUF_LEN-1)) {
+	while ((ch != '\n') && (ch != EOF) && (size<MAX_BUF_LEN-1)) {
 		line[size] = ch;
 		ch = fgetc(f);
 		size++;
@@ -65,7 +64,7 @@ int DataFile<T>::readFileLine(FILE* f, char* line) {
 template <class T>
 vector<T>* DataFile<T>::readLineArray(FILE* file) {
 	vector<T>* arline = new vector<T>();
-	char* line = new char[RMP_MAX_BUF_LEN];
+	char* line = new char[MAX_BUF_LEN];
 
 	readFileLine(file, line);
 	// skip all lines beginning with a #
@@ -168,7 +167,7 @@ void DataFile<T>::readDataFileLines(vector<string>& data) {
 		throw Error("!exception: DataFile<T>::readDataFileLines(), can't open file");
 	data.clear();
 
-	char buf[RMP_MAX_BUF_LEN];
+	char buf[MAX_BUF_LEN];
 
 	while (readFileLine(file, buf)) {
 		data.push_back(string(buf));

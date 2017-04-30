@@ -5,7 +5,7 @@
 #include <vector>
 #include <math.h>
 
-#include <miblab/error.h>
+#include <cpputils/error.h>
 
 using namespace std;
 

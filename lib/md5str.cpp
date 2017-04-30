@@ -1,4 +1,4 @@
-#include <miblab/md5str.h>
+#include <cpputils/md5str.h>
 /* ==========================================================================
  * Function:	md5str ( instr )
  * Purpose:	returns null-terminated character string containing
